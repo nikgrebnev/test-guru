@@ -7,13 +7,23 @@ Things you may want to cover:
 
 * Ruby version
 
+2.6.3
+
 * System dependencies
+
+Rails 6.0.0, sqlite
 
 * Configuration
 
+no
+
 * Database creation
 
+no
+
 * Database initialization
+
+no
 
 * How to run the test suite
 
