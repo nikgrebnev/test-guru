@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_060354) do
+ActiveRecord::Schema.define(version: 2019_10_24_162330) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false, null: false
-    t.integer "question_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "body"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -26,9 +30,19 @@ ActiveRecord::Schema.define(version: 2019_10_23_060354) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "passes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.integer "result"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_passes_on_test_id"
+    t.index ["user_id"], name: "index_passes_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text "body", null: false
-    t.integer "test_id", null: false
+    t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
@@ -37,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_060354) do
   create_table "tests", force: :cascade do |t|
     t.text "title", null: false
     t.integer "level", default: 0, null: false
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
@@ -52,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_10_23_060354) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "passes", "tests"
+  add_foreign_key "passes", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
 end
