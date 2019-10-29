@@ -1,7 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  scope :right_answers, -> { order(id: :asc).select(:id, :correct) }
+  scope :right_answers, -> (q) { where(question_id: q).order(id: :asc) }
 
   validates :body, presence: true
 
