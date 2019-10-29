@@ -10,7 +10,9 @@ users_arr=[]
 
 puts "users"
 (1..1000).each do |u|
-  users_arr << User.create(login: "user#{u}", password: Digest::SHA1.hexdigest("password#{u}"))
+  users_arr << User.create(login: "user#{u}",
+                            password: Digest::SHA1.hexdigest("password#{u}"),
+                            email: "user.#{u}@example.com")
 end
 
 (1..10).each do |i|
