@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get '/questions/:id/destroy', to: 'questions#destroy'
+
+# Test delete question /questions/10/destroy
+#  get '/questions/:id/destroy', to: 'questions#destroy'
+
   resources :tests do
     resources :questions, shallow: true
   end
