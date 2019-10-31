@@ -22,7 +22,7 @@ end
     test = category.tests.create(title: "Test #{t}/#{i}", level: rand(10), author_id: users_arr[rand(users_arr.count)].id)
     tests_arr << test
     (1..20).each do |q|
-      question = test.questions.create(body: "Question #{i}/#{t}/#{q}" + Digest::SHA2.hexdigest("#{i}#{t}#{q}"))
+      question = test.questions.create(body: "Question #{i}/#{t}/#{q} " + Digest::SHA2.hexdigest("#{i}#{t}#{q}"))
       (1..4).each do |a|
         answer = question.answers.create(body: "Answer #{a}/#{i}/#{t}/#{q}", correct: rand(2))
       end
