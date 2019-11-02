@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: "User"
-  has_many :questions, dependent: :delete_all
+  has_many :questions, dependent: :destroy
   has_many :passes, dependent: :delete_all
   has_many :users, through: :passes
 
@@ -22,11 +22,5 @@ class Test < ApplicationRecord
 #        .where(categories: {title: title})
 #        .order(id: :desc)
 #        .pluck(:title)
-  end
-
-  def delete_questions
-    self.questions.each do |question|
-      question.destroy
-    end
   end
 end

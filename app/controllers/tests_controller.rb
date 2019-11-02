@@ -9,10 +9,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    #приходится отдельно удалять вопросы, т.к. у них есть ответы.
-    #сделать через dependent: :delete_all не получается,
-    #работают только на 1 уровень вложенности, а не на 2
-    @test.delete_questions
     @test.destroy
     redirect_to tests_path
   end
