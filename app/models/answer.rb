@@ -10,7 +10,8 @@ class Answer < ApplicationRecord
   private
 
   def validate_max_answers
-    errors.add(:base, 'Max 4 answers.') if question.answers.count > 4
+    errors.add(:base, 'Max 4 answers.') if question.answers.count > 3
+    # почему тут 3, а не 4 - т.к. новый созданный вопрос УЖЕ влючается в подсчет... Или нет?
   end
 
 end
