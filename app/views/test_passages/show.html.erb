@@ -9,6 +9,7 @@
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label %>
+      (<%= b.object.correct %>)
     </p>
   <% end %>
   <p><%= form.submit 'Next' %></p>
