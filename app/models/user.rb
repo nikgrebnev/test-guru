@@ -18,7 +18,9 @@ class User < ApplicationRecord
 #    Pass.where("user_id = ? and test_id in (select id from tests where level = ?)", self.id, level.to_i)
   end
 
-  def test_passage(test)
+  # Мне лично кажется, что это было очень некрасиво называть функцию созвучно названию ассциации,
+  # т.к. гораздо тяжелее потом разобраться в коде, т.к. по контексту непонятно, дергаем ассоциацию или функцию
+  def test_passage_func(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 end
