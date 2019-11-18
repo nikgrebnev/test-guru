@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PassTest < ActiveSupport::TestCase
+class TestPassagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

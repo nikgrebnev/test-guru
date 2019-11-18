@@ -30,12 +30,12 @@ end
   end
 end
 
-puts "passes"
-users_arr.each do |u|
-  (1..100).each do |p|
-    pass = Pass.create(user_id: u.id, test_id: tests_arr[rand(tests_arr.count)].id, result: rand(100))
-  end
-end
+#puts "passes"
+#users_arr.each do |u|
+#  (1..100).each do |p|
+#    pass = Pass.create(user_id: u.id, test_id: tests_arr[rand(tests_arr.count)].id, result: rand(100))
+#  end
+#end
 
 #    test = Test.create(title: "Test #{t}/#{i}", level: rand(10), category_id: category.id, author_id: users_arr[rand(users_arr.count)].id)
 #      question = Question.create(body: "Question #{i}/#{t}/#{q}" + Digest::SHA2.hexdigest("#{i}#{t}#{q}"), test_id: test.id)

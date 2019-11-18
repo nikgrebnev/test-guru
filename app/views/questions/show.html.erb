@@ -1,5 +1,17 @@
-<h1>Question details</h1>
-Body: <%= @question.body %><br>
+<h1><%= @question.test.title %> Question details</h1>
+<p>
+  Body: <%= @question.body %><br>
+</p>
+
+<h2>Answers</h2>
+
+<table>
+  <%= render @question.answers.order(id: :asc) %>
+</table>
+
+<%= link_to 'New answer', new_question_answer_path(@question) %>
+
+<%= link_to 'Back to test', test_path(@question.test) %>
 
 <%= link_to 'Edit', edit_question_path(@question) %>
 <%= link_to 'Delete',

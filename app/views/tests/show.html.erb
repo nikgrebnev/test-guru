@@ -12,8 +12,7 @@ Category: <%= @test.category.title %><br>
     <th>Actions</th>
   </tr>
 
-  <%= render @questions %>
+  <%= render @test.questions.order(id: :asc) %>
 </table>
 
-<%= link_to 'New question', new_test_question_path %>
-<%= link_to 'All tests', tests_path %>
+<%= link_to 'New question', new_test_question_path(@test) %>
