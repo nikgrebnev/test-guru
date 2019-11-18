@@ -17,10 +17,5 @@ class Test < ApplicationRecord
 
   def self.category_find(title)
     Test.category_title(title).order(id: :desc).pluck(:title)
-#      Test
-#        .joins(:category)
-#        .where(categories: {title: title})
-#        .order(id: :desc)
-#        .pluck(:title)
   end
 end

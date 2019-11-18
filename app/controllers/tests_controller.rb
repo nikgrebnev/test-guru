@@ -39,12 +39,11 @@ class TestsController < ApplicationController
   end
 
   def show
-#    redirect_to test_questions_path(@test)
   end
 
   def start
     @user.tests.push(@test)
-    redirect_to @user.test_passage_func(@test)
+    redirect_to @user.get_test_passage_by_test(@test)
   end
 
   private

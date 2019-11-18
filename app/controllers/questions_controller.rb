@@ -5,17 +5,6 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_record_not_found
 
-#  def index
-#    redirect_to test_path(@test)
-
-#    @questions = @test.questions.order(:id)
-#    render html: result.map(&:body).join('<BR>').html_safe
-#    respond_to do |format|
-#      format.html { render html: result.map(&:body).join('<BR>').html_safe }
-#      format.json { render json: { questions: result } }
-#    end
-#  end
-
   def show
   end
 
@@ -48,7 +37,6 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to @question.test
-#    redirect_to test_questions_path(@question.test)
   end
 
   private

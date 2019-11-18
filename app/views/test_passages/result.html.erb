@@ -2,9 +2,9 @@
 <p>
   Your success rate:
   <% if @test_passage.success? %>
-    <span class="pass"><%= @test_passage.success_percent_var %>% Success!</span>
+    <span class="pass"><%= @test_passage.success_percent %>% Success!</span>
   <% else %>
-    <span class="fail"><%= @test_passage.success_percent_var %>% Test failed</span>
+    <span class="fail"><%= @test_passage.success_percent %>% Test failed</span>
   <% end %>
 </p>
 
