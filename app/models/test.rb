@@ -18,4 +18,8 @@ class Test < ApplicationRecord
   def self.category_find(title)
     Test.category_title(title).order(id: :desc).pluck(:title)
   end
+
+  def get_question_ids
+    @question_ids ||= questions.ids.sort
+  end
 end

@@ -30,8 +30,7 @@ class TestPassage < ApplicationRecord
   end
 
   def progress
-    # вводя переменную ниже, мы уменьшаем количество sql запросов на 1
-    questions_array = test.questions.ids.sort
+    questions_array = test.get_question_ids
     (questions_array.index(current_question.id)+1).to_s + '/' + questions_array.size.to_s
   end
 
