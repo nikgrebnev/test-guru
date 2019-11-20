@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
+    <% else %>
+      <p>
+        <%= link_to 'Test Guru home', root_path %>
+        Please
+        <%= link_to 'Login', login_path %>
+        or
+        <%= link_to 'Register', signup_path %>
+      </p>
+    <% end %>
+
     <%= yield %>
     
     <%= render 'shared/footer' %>
