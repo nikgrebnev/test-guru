@@ -1,9 +1,21 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  before_action :configure_permitted_parameters, if:  :devise_controller?
 
   private
 
-  def redirect_if_logged
-    redirect_to root_path if logged_in?
+    def after_sign_in_path_for(resource)
+    flash[:alert] = "Hello, #{current_user.first_name} #{current_user.last_name}!"
+    if current_user.admin?
+      admin_tests_path
+    else
+      root_path
+    end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 end
