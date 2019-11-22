@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(resource)
     flash[:alert] = "Hello, #{current_user.first_name} #{current_user.last_name}!"
     if current_user.admin?
       admin_tests_path
