@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 # Test delete question /questions/10/destroy via GET method
 #  get '/questions/:id/destroy', to: 'questions#destroy'
 
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
       #GET /test_passages/101/result
       get :result
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
 
 end
