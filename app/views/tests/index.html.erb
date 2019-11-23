@@ -1,7 +1,4 @@
 <h1>Tests</h1>
-<p>
-  <%= link_to 'New test', new_test_path %>
-</p>
 
 <table>
   <tr>
@@ -10,10 +7,8 @@
     <th>Title</th>
     <th>Level</th>
     <th>Questions</th>
-    <th colspan="4">Actions</th>
+    <th>Action</th>
   </tr>
 
   <%= render @tests %>
 </table>
-
-<%= link_to 'New test', new_test_path %>

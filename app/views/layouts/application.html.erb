@@ -10,17 +10,14 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
-    <% else %>
-      <p>
-        <%= link_to 'Test Guru home', root_path %>
-        Please
-        <%= link_to 'Login', login_path %>
-        or
-        <%= link_to 'Register', signup_path %>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
     

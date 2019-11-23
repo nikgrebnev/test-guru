@@ -1,21 +1,15 @@
 Rails.application.routes.draw do
 
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
+    controllers: {confirmations: 'users/confirmations'}
+
  # get 'users/new'
   root 'tests#index'
 
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  get :logout, to: 'sessions#destroy'
-
-  resources :users, only: :create
-  resources :sessions, only: :create
 # Test delete question /questions/10/destroy via GET method
 #  get '/questions/:id/destroy', to: 'questions#destroy'
 
-  resources :tests do
-    resources :questions, shallow: true, except: :index do
-      resources :answers, shallow: true, except: :index
-    end
+  resources :tests, only: :index do
     member do
       post :start
     end
@@ -25,6 +19,14 @@ Rails.application.routes.draw do
     member do
       #GET /test_passages/101/result
       get :result
+    end
+  end
+
+  namespace :admin do
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
     end
   end
 
