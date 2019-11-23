@@ -42,11 +42,6 @@ class Admin::TestsController < Admin::BaseController
   def show
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.get_test_passage_by_test(@test)
-  end
-
   private
 
   def set_test
