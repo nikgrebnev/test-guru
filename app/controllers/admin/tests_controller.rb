@@ -21,7 +21,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 #    @test.author_id=current_user.id
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -53,6 +53,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def rescue_with_record_not_found
-    render plain: 'Record was not found'
+    render plain: t('admin.shared.not_found')
   end
 end

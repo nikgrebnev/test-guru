@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    link_to 'Github repository', "https://github.com/#{author}/#{repo}", target: :blank
+    link_to t('nav.github'), "https://github.com/#{author}/#{repo}", target: :blank
   end
 
   def flash_message()

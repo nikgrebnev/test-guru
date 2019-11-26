@@ -29,5 +29,77 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Здравствуй, мир"
+ru:
+  nav:
+    show: 'Просморт'
+    edit: 'Редактирование'
+    delete: 'Удаление'
+    confirm: 'Вы уверены?'
+    back: 'Назад'
+    logout: 'Выход из системы'
+    actions: 'Действия'
+    github: 'Github repository'
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Записать тест"
+      question:
+        create: "Создать вопрос"
+        update: "Записать вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Записать ответ"
+    label:
+      all:
+        id: 'Id'
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: 'Вопрос'
+      answer:
+        correct: "Правильно"
+        body: "Ответ"
+    select:
+      prompt: "Выберите"
+
+  admin:
+    shared:
+      not_authorized: "Вы не авторизованы для просмотра данной страницы."
+      not_found: "Запись не найдена"
+    tests:
+      title: "Тесты"
+      create:
+        success: "Тест был успешно создан"
+      index:
+        header: "Тесты"
+      show:
+        header: "Детали теста"
+    answers:
+      title: "Ответы"
+      create:
+        success: "ответ был успешно создан"
+      edit:
+        header: "Редактирование ответа"
+      new:
+        header: "Новый ответ"
+    questions:
+      title: "Вопросы"
+      show:
+        header: "Детали вопросы"
+    nav:
+      header: "TestGuru панель администратора"
+      edit_question_title: "Редактировать %{title} вопрос"
+      new_question_title: "Создать новый %{title} вопрос"
+      back_question: "Назад к вопросу"
+      back_test: "Назад к тесту"
+      new_question: "Новый вопрос"
+      new_answer: "Новый ответ"
+      new_test: "Новый тест"
+      create_new_test: "Создание нового теста"
+
+
+

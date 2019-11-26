@@ -58,6 +58,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_record_not_found
-    render plain: 'Record was not found'
+    render plain: t('admin.shared.not_found')
   end
 end

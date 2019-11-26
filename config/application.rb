@@ -17,7 +17,7 @@ module TestGuru
     # the framework and any gems in your application.
     
     config.time_zone = "St. Petersburg"
-#    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :ru
     config.i18n.fallbacks = true
     config.i18n.enforce_available_locales = false
   end
