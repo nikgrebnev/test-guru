@@ -19,3 +19,10 @@ en:
     errors:
       messages:
         blank: "can't be blank"
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers:
+                one: 'Question can have max %{count} answer'
+                other: 'Question can have max %{count} answers'
