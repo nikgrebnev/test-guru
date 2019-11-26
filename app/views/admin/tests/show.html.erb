@@ -1,21 +1,26 @@
-<h1>Test details</h1>
-Title: <%= @test.title %><br>
-Level: <%= @test.level %><br>
-Category: <%= @test.category.title %><br>
+<h1><%= t('.header') %></h1>
+<%= t('helpers.label.test.title') %>:       <%= @test.title %><br>
+<%= t('helpers.label.test.level') %>:       <%= @test.level %><br>
+<%= t('helpers.label.test.category_id') %>: <%= @test.category.title %><br>
 
-<h1>Questions</h1>
+<h1><%= t('admin.questions.title') %></h1>
 
-<%= link_to 'New question', new_admin_test_question_path(@test) %>
+<%= link_to t('admin.nav.new_question'), new_admin_test_question_path(@test) %>
 
 <table>
   <tr>
-    <th>id</th>
-    <th>body</th>
-    <th>Actions</th>
+    <th><%= t('helpers.label.all.id') %></th>
+    <th><%= t('helpers.label.question.body') %></th>
+    <th><%= t('nav.actions') %></th>
   </tr>
 
   <%= render partial: 'admin/questions/question', collection: @test.questions.order(id: :asc) %>
 </table>
 
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('nav.edit'), edit_admin_test_path(@test) %>
+<%= link_to t('nav.back'), admin_tests_path %>
+
+
+
+
+

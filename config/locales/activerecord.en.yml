@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        correct: "Correct"
+        body: "Answer"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers:
+                one: 'Question can have max %{count} answer'
+                other: 'Question can have max %{count} answers'

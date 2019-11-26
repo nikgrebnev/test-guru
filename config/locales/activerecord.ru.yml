@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        correct: "Правильно"
+        body: "Ответ"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+      models:
+        answer:
+          attributes:
+            base:
+              max_answers:
+                one: 'У вопроса может быть максимум %{count} ответ'
+                few: 'У вопроса может быть максимум %{count} ответа'
+                other: 'У вопроса может быть максимум %{count} ответов'
+    

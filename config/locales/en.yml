@@ -31,3 +31,76 @@
 
 en:
   hello: "Hello world"
+  nav:
+    show: 'Show'
+    edit: 'Edit'
+    delete: 'Delete'
+    confirm: 'Are you sure?'
+    back: 'Back'
+    logout: 'Logout'
+    actions: 'Actions'
+    github: 'Github repository'
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+    label:
+      all:
+        id: 'Id'
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: 'Question'
+      answer:
+        correct: "Correct"
+        body: "Answer"
+    select:
+      prompt: "Please select"
+
+
+  admin:
+    shared:
+      not_authorized: "You are not authorized to view this page."
+      not_found: "Record was not found"
+    tests:
+      title: "Tests"
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tests"
+      show:
+        header: "Test details"
+    answers:
+      title: "Answers"
+      create:
+        success: "Answer was successfully created"
+      edit:
+        header: "Editing Answer"
+      new:
+        header: "New Answer"
+    questions:
+      title: "Questions"
+      show:
+        header: "Question details"
+    nav:
+      header: "TestGuru Admin Panel"
+      edit_question_title: "Edit %{title} Question"
+      new_question_title: "Create new %{title} Question"
+      back_question: "Back to question"
+      back_test: "Back to test"
+      new_question: "New question"
+      new_answer: "New answer"
+      new_test: "New test"
+      create_new_test: "Create new test"
+
+
