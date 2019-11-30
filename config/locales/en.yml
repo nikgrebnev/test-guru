@@ -47,6 +47,13 @@ en:
     enter_email: 'Enter email'
     remember_me: 'Remember me'
     start: 'Start'
+    next: 'Next'
+    passing_test: 'Passing the test'
+    test_completed: 'Test was Completed!'
+    success_rate: 'Your success rate:'
+    test_success: 'Test Success!'
+    test_failed: 'Test failed'
+
 
   helpers:
     submit:

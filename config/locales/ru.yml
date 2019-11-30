@@ -46,6 +46,11 @@ ru:
     enter_email: 'Введите email'
     remember_me: 'Запомнить меня'
     start: 'Начать'
+    passing_test: 'Прохождение теста'
+    test_completed: 'тест сдан!'
+    success_rate: 'Успешность прохождения:'
+    test_success: 'тест сдан!'
+    test_failed: 'тест провален'
 
   helpers:
     submit:

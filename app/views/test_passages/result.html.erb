@@ -4,16 +4,16 @@
     <div class="card border-primary">
       <div class="card-body">
 
-        <h5 class="card-title">The <%= @test_passage.test.title %> Test was Completed!</h5>
+        <h5 class="card-title">'<%= @test_passage.test.title %>' <%= t('nav.test_completed') %></h5>
         <p>
-          Your success rate:
+          <%= t('nav.success_rate') %>
           <% if @test_passage.success? %>
             <div class="alert alert-success" role="alert">
-              <%= @test_passage.success_percent %>% Test Success!
+              <%= @test_passage.success_percent %>% <%= t('nav.test_success') %>
             </div>
         <% else %>
             <div class="alert alert-danger" role="alert">
-              <%= @test_passage.success_percent %>% Test failed
+              <%= @test_passage.success_percent %>% <%= t('nav.test_failed') %>
             </div>
           <% end %>
         </p>
