@@ -1,8 +1,10 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('admin.nav.header') %></span>
+<nav class="navbar navbar-light bg-light">
 
-  <div class="nav-admin user">
-    Welcome, <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
+  <%= link_to t('nav.appname'), admin_tests_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
+    <b><%= current_user.email %></b> Guru |
     <%= link_to t('nav.logout'), destroy_user_session_path, method: :delete %>
-  </div>
-</div>
+  </span>
+</nav>
+
+

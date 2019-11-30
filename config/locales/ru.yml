@@ -36,9 +36,16 @@ ru:
     delete: 'Удаление'
     confirm: 'Вы уверены?'
     back: 'Назад'
-    logout: 'Выход из системы'
     actions: 'Действия'
     github: 'Github repository'
+    appname: 'TestGuru'
+    login: 'Войти'
+    logout: 'Выход'
+    signup: 'Зарегистрироваться'
+    welcome: 'Приветствуем'
+    enter_email: 'Введите email'
+    remember_me: 'Запомнить меня'
+    start: 'Начать'
 
   helpers:
     submit:
@@ -101,5 +108,7 @@ ru:
       new_test: "Новый тест"
       create_new_test: "Создание нового теста"
 
-
+  tests:
+    index:
+      header: "Доступные тесты"
 

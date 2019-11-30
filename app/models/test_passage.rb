@@ -31,7 +31,8 @@ class TestPassage < ApplicationRecord
 
   def progress
     questions_array = test.get_question_ids
-    (questions_array.index(current_question.id)+1).to_s + '/' + questions_array.size.to_s
+    (100.0 * questions_array.index(current_question.id).to_f / questions_array.size.to_f).to_i
+#    (questions_array.index(current_question.id)+1).to_s + '/' + questions_array.size.to_s
   end
 
   private

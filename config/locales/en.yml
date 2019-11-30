@@ -37,9 +37,16 @@ en:
     delete: 'Delete'
     confirm: 'Are you sure?'
     back: 'Back'
-    logout: 'Logout'
+    login: 'Log in'
+    logout: 'Log out'
+    signup: 'Sign up'
     actions: 'Actions'
     github: 'Github repository'
+    appname: 'TestGuru'
+    welcome: 'Welcome'
+    enter_email: 'Enter email'
+    remember_me: 'Remember me'
+    start: 'Start'
 
   helpers:
     submit:
@@ -93,7 +100,7 @@ en:
       show:
         header: "Question details"
     nav:
-      header: "TestGuru Admin Panel"
+      header: "Admin Panel"
       edit_question_title: "Edit %{title} Question"
       new_question_title: "Create new %{title} Question"
       back_question: "Back to question"
@@ -103,4 +110,7 @@ en:
       new_test: "New test"
       create_new_test: "Create new test"
 
+  tests:
+    index:
+      header: "Allowed tests"
 
