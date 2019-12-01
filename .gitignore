@@ -39,3 +39,6 @@ yarn-debug.log*
 .idea
 .generators
 
+config/master.key
+.env
+

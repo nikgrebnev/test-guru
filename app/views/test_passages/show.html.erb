@@ -18,6 +18,7 @@
               </div>
             <% end %>
             <%= form.submit t('nav.next'), class: 'btn btn-primary' %>
+            <%= link_to t('gist.question'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-info' %>
           </div>
         <% end %>
       </div>
