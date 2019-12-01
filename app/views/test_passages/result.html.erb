@@ -1,10 +1,25 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
-<p>
-  Your success rate:
-  <% if @test_passage.success? %>
-    <span class="pass"><%= @test_passage.success_percent %>% Success!</span>
-  <% else %>
-    <span class="fail"><%= @test_passage.success_percent %>% Test failed</span>
-  <% end %>
-</p>
+<div class="row justify-content-center mt-3" >
+  <div class="col col-md-6">
 
+    <div class="card border-primary">
+      <div class="card-body">
+
+        <h5 class="card-title">'<%= @test_passage.test.title %>' <%= t('nav.test_completed') %></h5>
+        <p>
+          <%= t('nav.success_rate') %>
+          <% if @test_passage.success? %>
+            <div class="alert alert-success" role="alert">
+              <%= @test_passage.success_percent %>% <%= t('nav.test_success') %>
+            </div>
+        <% else %>
+            <div class="alert alert-danger" role="alert">
+              <%= @test_passage.success_percent %>% <%= t('nav.test_failed') %>
+            </div>
+          <% end %>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
