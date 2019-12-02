@@ -27,13 +27,10 @@ class TestPassagesController < ApplicationController
     if result
       create_gist(result)
 #      flash_options = { notice: "#{t('gist.success')} #{get_gist_url(result)}" }
-# почему-то не работает. Показывается в виде html кода
-      flash_options = { notice: "
-      #{t('gist.success')}
-      #{get_gist_url(result)}
-      #{view_context.link_to(t('nav.show'), @gist_url, class: 'btn btn-primary', target: :blank)}
-      ".html_safe
-      }
+# target blank теряется!
+      gist_link = view_context.link_to(t('nav.show'), @gist_url, class: 'btn btn-primary', target: :blank)
+      flash_options = { notice: t('gist.success'), alert: gist_link }
+      puts flash_options.inspect
     else
       flash_options = { notice: t('gist.failure') }
     end
@@ -56,7 +53,7 @@ class TestPassagesController < ApplicationController
   end
 
   def get_gist_url(result)
-    @gist_url ||= result[:url]
+    @gist_url ||= result[:html_url]
 #    @gist_url ||= JSON.parse(result.body)["html_url"]
   end
 

@@ -1,3 +1,5 @@
+<% puts flash.inspect %>
 <% flash.each do |key, message| %>
-  <%= content_tag :div, message, class: "alert alert-success" %>
+  <% puts message.inspect %>
+  <%= content_tag :div, sanitize(message), class: "alert alert-success", role: 'alert' %>
 <% end %>
