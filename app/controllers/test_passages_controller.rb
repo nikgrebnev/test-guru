@@ -26,14 +26,14 @@ class TestPassagesController < ApplicationController
 
     if result
       create_gist(result)
-      flash_options = { notice: "#{t('gist.success')} #{get_gist_url(result)}" }
+#      flash_options = { notice: "#{t('gist.success')} #{get_gist_url(result)}" }
 # почему-то не работает. Показывается в виде html кода
-#      flash_options = { notice: "
-#      #{t('gist.success')}
-#      #{get_gist_url(result)}
-#      #{view_context.link_to(t('nav.show'), @gist_url, class: 'btn btn-primary', target: :blank)}
-#      ".html_safe
-#      }
+      flash_options = { notice: "
+      #{t('gist.success')}
+      #{get_gist_url(result)}
+      #{view_context.link_to(t('nav.show'), @gist_url, class: 'btn btn-primary', target: :blank)}
+      ".html_safe
+      }
     else
       flash_options = { notice: t('gist.failure') }
     end
