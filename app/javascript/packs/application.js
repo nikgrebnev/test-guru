@@ -1,3 +1,6 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -16,6 +19,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-require("jquery3")
-require("popper")
-require("bootstrap-sprockets")
+require("jquery")
+require("popper.js")
+require("bootstrap")
+//require("bootstrap-sprockets")
+
+// npm install bootstrap@4.3.1
+// npm install popper.js -D

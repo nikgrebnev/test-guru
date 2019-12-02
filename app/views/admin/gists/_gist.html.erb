@@ -1,0 +1,15 @@
+<div class="card border-primary mt-1">
+  <div class="card-body">
+    <h5 class="card-title"> <%= gist.question.test.category.title %> / <%= gist.question.test.title %></h5>
+    <ul>
+      <li><%= t('helpers.label.all.id') %>: <%= gist.id %>
+      <li><%= t('nav.url') %>: <%= gist.url %>
+      <li><%= t('helpers.label.question.body') %>: <%= gist.question.body %>
+      <li><%= t('nav.email') %>: <%= gist.user.email %>
+    </ul>
+    <%= link_to t('nav.show'), gist.url, class: 'btn btn-primary', target: :blank %>
+  </div>
+</div>
+
+
+
