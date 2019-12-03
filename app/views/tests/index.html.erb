@@ -1,8 +1,28 @@
 <div class="row justify-content-center mt-3" >
-  <div class="col col-md-6">
+  <div class="col col-md-12">
 
     <h2><%= t('.header') %></h2>
 
-    <%= render @tests %>
+    <table class="table">
+      <tr>
+        <th><%= t('helpers.label.all.id') %></th>
+        <th><%= t('helpers.label.test.category_id') %></th>
+        <th class="sort-by-title pointer">
+          <%= t('helpers.label.test.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
+        <th><%= t('helpers.label.test.level') %></th>
+        <th><%= t('admin.questions.title') %></th>
+        <th colspan="1"><%= t('nav.actions') %></th>
+      </tr>
+
+      <%= render @tests %>
+    </table>
+
+
   </div>
 </div>
+
+
+
