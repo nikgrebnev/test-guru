@@ -21,8 +21,6 @@ require("channels")
 
 require("jquery")
 require("popper.js")
-require("bootstrap")
-//require("bootstrap-sprockets")
-
-// npm install bootstrap@4.3.1
-// npm install popper.js -D
+require("bootstrap");
+import sorting from '../utilities/sorting'
+// import passwordcheck from '../utilities/sorting'

@@ -29,7 +29,7 @@ class TestPassagesController < ApplicationController
 #      flash_options = { notice: "#{t('gist.success')} #{get_gist_url(result)}" }
 # target blank теряется!
       gist_link = view_context.link_to(t('nav.show'), @gist_url, class: 'btn btn-primary', target: :blank)
-      flash_options = { notice: t('gist.success'), alert: gist_link }
+      flash_options = { notice: t('gist.success'), url: gist_link }
       puts flash_options.inspect
     else
       flash_options = { notice: t('gist.failure') }

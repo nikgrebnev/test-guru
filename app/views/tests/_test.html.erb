@@ -1,15 +1,10 @@
-<div class="card border-primary mt-1">
-  <div class="card-body">
-    <h5 class="card-title"> <%= test.category.title %> / <%= test.title %></h5>
-    <ul>
-      <li><%= t('helpers.label.all.id') %> <%= test.id %>
-      <li><%= t('helpers.label.test.level') %> <%= test_level(test) %>
-      <li><%= t('admin.questions.title') %> <%= test.questions.count %>
-    </ul>
-    <%= button_to t('nav.start'), start_test_path(test), class: 'btn btn-primary' %>
-  </div>
-</div>
-
-
+<tr>
+  <td><%= test.id %></td>
+  <td><%= test.category.title %></td>
+  <td><%= test.title %></td>
+  <td><%= test_level(test) %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= button_to t('nav.start'), start_test_path(test), class: 'btn btn-primary' %></td>
+</tr>
 
 
