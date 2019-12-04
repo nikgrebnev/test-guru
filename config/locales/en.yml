@@ -23,6 +23,7 @@ en:
     test_failed: 'Test failed'
     email: 'Email'
     url: 'Url'
+    save: 'Save'
 
   helpers:
     submit:

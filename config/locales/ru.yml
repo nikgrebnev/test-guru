@@ -23,6 +23,7 @@ ru:
     next: 'Следующий вопрос'
     email: 'Email'
     url: 'Url'
+    save: 'Сохранить'
 
   helpers:
     submit:
