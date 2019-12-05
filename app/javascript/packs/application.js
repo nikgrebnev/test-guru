@@ -22,5 +22,7 @@ require("channels")
 require("jquery")
 require("popper.js")
 require("bootstrap");
-import sorting from '../utilities/sorting'
-// import passwordcheck from '../utilities/sorting'
+require("../utilities/sorting")
+require("../utilities/password_check")
+require("../utilities/form_inline")
+require("../utilities/progress")

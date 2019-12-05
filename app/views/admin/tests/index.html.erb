@@ -3,6 +3,8 @@
   <%= link_to t('admin.nav.new_test'), new_admin_test_path %>
 </p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table">
   <tr>
     <th><%= t('helpers.label.all.id') %></th>
