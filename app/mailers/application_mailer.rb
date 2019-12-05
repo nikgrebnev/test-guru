@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: %{"TestGuru" mail@test-guru-ng.herokuapp.com}
+  default from: ENV["SMTP_USER_FROM"]
+#  default from: %{"TestGuru" mail@test-guru-ng.herokuapp.com}
   layout 'mailer'
 end
