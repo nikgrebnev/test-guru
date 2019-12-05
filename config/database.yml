@@ -10,7 +10,8 @@ default: &default
 
 development:
   <<: *default
-  database: testguru
+  database: t1
+#  database: testguru
 
 #  database: db/development.sqlite3
 
