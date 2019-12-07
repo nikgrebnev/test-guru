@@ -24,6 +24,9 @@ ru:
     email: 'Email'
     url: 'Url'
     save: 'Сохранить'
+    feedback_send: 'Отзыв послан'
+    feedback: 'Отзыв'
+
 
   helpers:
     submit:

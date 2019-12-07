@@ -24,6 +24,8 @@ en:
     email: 'Email'
     url: 'Url'
     save: 'Save'
+    feedback_send: 'Feedback sended'
+    feedback: 'Feedback'
 
   helpers:
     submit:
