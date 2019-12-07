@@ -1,21 +1,15 @@
 class TestPassage < ApplicationRecord
-  TEST_SUCCESS = 85.freeze
+  TEST_SUCCESS = 5.freeze
 
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
-
-  def save_result
-    @result = calc_result
-    self.result = @result
-    save!
-  end
+#  before_validation :before_validation_set_next_question, on: :update
 
   def success?
-    @success_percent >= TEST_SUCCESS
+    success_percent >= TEST_SUCCESS && !timeout?
   end
 
   def success_percent
@@ -27,12 +21,19 @@ class TestPassage < ApplicationRecord
       self.correct_questions += 1
     end
 # заменили на before_validation :before_validation_set_next_question
-#    self.current_question = next_question
+    self.current_question = next_question
+    if completed?
+      self.success = success?
+    end
     save!
   end
 
   def completed?
     current_question.nil?
+  end
+
+  def timeout?
+    !current_question.nil?
   end
 
   def progress
@@ -47,21 +48,13 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def calc_result
-    if time_left.nil? || time_left > 0
-      success? ? 1 : 0
-    else
-      -1
-    end
-  end
-
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
-  def before_validation_set_next_question
-    self.current_question = next_question unless completed?
-  end
+ # def before_validation_set_next_question
+ #   self.current_question = next_question # unless completed?
+ # end
 
   def correct_answer?(answer_ids)
     answer_ids ||= []
@@ -73,6 +66,6 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first unless completed?
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
