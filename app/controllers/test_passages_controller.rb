@@ -8,6 +8,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    @test_passage.save_result
 #    @success, @success_percent = @test_passage.success
   end
 

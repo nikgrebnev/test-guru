@@ -7,6 +7,7 @@
   </td>
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.timer == 0 ? '-' : test.timer %></td>
   <td class="align-middle"><%= link_to t('nav.show'), admin_test_path(test) %></td>
   <td class="align-middle">
     <%= link_to t('nav.edit'),

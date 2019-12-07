@@ -8,6 +8,12 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_validation :before_validation_set_next_question, on: :update
 
+  def save_result
+    @result = calc_result
+    self.result = @result
+    save!
+  end
+
   def success?
     @success_percent >= TEST_SUCCESS
   end
@@ -35,14 +41,26 @@ class TestPassage < ApplicationRecord
 #    (questions_array.index(current_question.id)+1).to_s + '/' + questions_array.size.to_s
   end
 
+  def time_left
+    @time_left ||= self.test.timer == 0 ? nil : (self.test.timer + self.created_at.to_i - Time.now.to_i)
+  end
+
   private
+
+  def calc_result
+    if time_left.nil? || time_left > 0
+      success? ? 1 : 0
+    else
+      -1
+    end
+  end
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
   def before_validation_set_next_question
-    self.current_question = next_question
+    self.current_question = next_question unless completed?
   end
 
   def correct_answer?(answer_ids)
@@ -55,6 +73,6 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where('id > ?', current_question.id).first unless completed?
   end
 end
