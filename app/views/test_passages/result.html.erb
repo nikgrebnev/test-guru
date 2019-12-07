@@ -7,7 +7,6 @@
         <h5 class="card-title">'<%= @test_passage.test.title %>' <%= t('nav.test_completed') %></h5>
         <p>
           <%= t('nav.success_rate') %>
-<% unless @test_passage.result.nil? %>
           <% if @test_passage.result > 0 %>
             <div class="alert alert-success" role="alert">
               <%= @test_passage.success_percent %>% <%= t('nav.test_success') %>
@@ -18,7 +17,6 @@
               <%= t('nav.timeout') if @test_passage.result == -1 %>
             </div>
           <% end %>
-<% end %>
         </p>
 
       </div>
