@@ -34,6 +34,7 @@ class TestPassage < ApplicationRecord
 
   def timeout?
     !current_question.nil?
+#    return false if self.test.timer == 0
   end
 
   def progress
@@ -44,6 +45,11 @@ class TestPassage < ApplicationRecord
 
   def time_left
     @time_left ||= self.test.timer == 0 ? nil : (self.test.timer + self.created_at.to_i - Time.now.to_i)
+  end
+
+  def time_left?
+    return false if time_left.nil?
+    time_left <= 0
   end
 
   private
