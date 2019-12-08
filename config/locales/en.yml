@@ -32,6 +32,7 @@ en:
     my_badges: 'My badges'
     all_badges: 'All badges'
     badges: 'Badges'
+    received_badge: 'You have received badge %{title}!'
 
   helpers:
     submit:

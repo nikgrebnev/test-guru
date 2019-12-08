@@ -32,6 +32,7 @@ ru:
     my_badges: 'Мои награды'
     all_badges: 'Все возможные награды'
     badges: 'Награды'
+    received_badge: 'Вы получили награду %{title}!'
 
 
   helpers:
