@@ -1,5 +1,5 @@
 class TestPassage < ApplicationRecord
-  TEST_SUCCESS = 5.freeze
+  TEST_SUCCESS = 85.freeze
 
   belongs_to :user
   belongs_to :test
@@ -9,7 +9,7 @@ class TestPassage < ApplicationRecord
 #  before_validation :before_validation_set_next_question, on: :update
 
   def success?
-    success_percent >= TEST_SUCCESS && !timeout?
+    success_percent >= TEST_SUCCESS && completed?
   end
 
   def success_percent
@@ -30,11 +30,6 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
-  end
-
-  def timeout?
-    !current_question.nil?
-#    return false if self.test.timer == 0
   end
 
   def progress
