@@ -18,7 +18,7 @@ class TestPassagesController < ApplicationController
 
   def update
     if @test_passage.time_left?
-      redirect_to result_test_passage_path(@test_passage), notice: t('nav.timeout')
+      redirect_to result_test_passage_path(@test_passage), notice: t('nav.timeout') and return
     end
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
