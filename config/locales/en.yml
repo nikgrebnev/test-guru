@@ -29,6 +29,9 @@ en:
     timer: 'Time, sec'
     time_left: 'Left time, sec'
     timeout: 'Time to take test is left!'
+    my_badges: 'My badges'
+    all_badges: 'All badges'
+    badges: 'Badges'
 
   helpers:
     submit:

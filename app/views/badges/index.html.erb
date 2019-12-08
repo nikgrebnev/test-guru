@@ -1,0 +1,29 @@
+<div class="row justify-content-center mt-3" >
+  <div class="col col-md-12">
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-my-badges-tab" data-toggle="tab" href="#nav-my-badges" role="tab" aria-controls="nav-my-badges" aria-selected="true">
+          <%= t('nav.my_badges') %>
+        </a>
+        <a class="nav-item nav-link"        id="nav-all-badges-tab" data-toggle="tab" href="#nav-all-badges" role="tab" aria-controls="nav-all-badges" aria-selected="false">
+          <%= t('nav.all_badges') %>
+        </a>
+        <div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-my-badges"    role="tabpanel" aria-labelledby="nav-my-badges-tab">
+        <h4><%= t('nav.my_badges') %></h4>
+        <%= render @my_badges %>
+      </div>
+      <div class="tab-pane fade"             id="nav-all-badges" role="tabpanel" aria-labelledby="nav-all-badges-tab">
+        <h4><%= t('nav.all_badges') %></h4>
+        <%= render @all_badges %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
