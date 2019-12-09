@@ -23,7 +23,11 @@
         <% end %>
       </div>
     </div>
-
+    <% unless @test_passage.time_left.nil? %>
+      <%= content_tag :div, '', class: ["hide", "time-left"], data: { time_left: @test_passage.time_left, redirect_url: result_test_passage_path(@test_passage)} %>
+      <%= t('nav.time_left') %> :
+      <%= content_tag :b, '', class: ["time-left-show"] %>
+    <% end %>
     <div class="progress m-1">
       <div class="progress-bar" style="width: <%= @test_passage.progress %>%" role="progressbar" aria-valuenow="<%= @test_passage.progress %>" aria-valuemin="0" aria-valuemax="100"></div>
     </div>

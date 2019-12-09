@@ -6,10 +6,10 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
+#  before_validation :before_validation_set_next_question, on: :update
 
   def success?
-    @success_percent >= TEST_SUCCESS
+    success_percent >= TEST_SUCCESS && completed?
   end
 
   def success_percent
@@ -21,7 +21,10 @@ class TestPassage < ApplicationRecord
       self.correct_questions += 1
     end
 # заменили на before_validation :before_validation_set_next_question
-#    self.current_question = next_question
+    self.current_question = next_question
+    if completed?
+      self.success = success?
+    end
     save!
   end
 
@@ -35,15 +38,24 @@ class TestPassage < ApplicationRecord
 #    (questions_array.index(current_question.id)+1).to_s + '/' + questions_array.size.to_s
   end
 
+  def time_left
+    @time_left ||= self.test.timer == 0 ? nil : (self.test.timer + self.created_at.to_i - Time.now.to_i)
+  end
+
+  def time_left?
+    return false if time_left.nil?
+    time_left <= 0
+  end
+
   private
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
-  def before_validation_set_next_question
-    self.current_question = next_question
-  end
+ # def before_validation_set_next_question
+ #   self.current_question = next_question # unless completed?
+ # end
 
   def correct_answer?(answer_ids)
     answer_ids ||= []

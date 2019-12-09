@@ -26,6 +26,9 @@ ru:
     save: 'Сохранить'
     feedback_send: 'Отзыв послан'
     feedback: 'Отзыв'
+    timer: 'Время, сек'
+    time_left: 'Осталось времени, сек'
+    timeout: 'Время на сдачу теста истекло!'
 
 
   helpers:
