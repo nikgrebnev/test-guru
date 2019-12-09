@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'badges/index'
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
     controllers: {confirmations: 'users/confirmations'}
 
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :feedbacks, only: %i[new create]
 
+#  get 'badges/index'
   resources :badges, only: %i[index]
 
   resources :test_passages, only: %i[show update] do
