@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_201948) do
     t.text "title"
     t.text "url"
     t.integer "badge_rule"
+    t.integer "badge_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
