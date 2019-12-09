@@ -42,23 +42,20 @@ class TestPassage < ApplicationRecord
     @time_left ||= self.test.timer == 0 ? nil : (self.test.timer + self.created_at.to_i - Time.now.to_i)
   end
 
-  private
-
-  def calc_result
-    if time_left.nil? || time_left > 0
-      success? ? 1 : 0
-    else
-      -1
-    end
+  def time_left?
+    return false if time_left.nil?
+    time_left <= 0
   end
+
+  private
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
-#  def before_validation_set_next_question
-#    self.current_question = next_question # unless completed?
-#  end
+ # def before_validation_set_next_question
+ #   self.current_question = next_question # unless completed?
+ # end
 
   def correct_answer?(answer_ids)
     answer_ids ||= []

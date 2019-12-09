@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     member do
       #GET /test_passages/101/result
       get :result
+      get :timeout
       post :gist
     end
   end
