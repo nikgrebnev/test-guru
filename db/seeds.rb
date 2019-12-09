@@ -64,16 +64,16 @@ user.save!
 end
 
 badges = [
-['Знак 1','https://upload.wikimedia.org/wikipedia/commons/6/69/Badge_Off-High-School_SU.png',3,6],
-['Знак 2','http://falerist.org/cache/com_zoo/images/Morskoy_opolchencheskiy_znak_NikolayI_a17b70659821656e5007fc8a4739376f.jpg',1,nil],
-['Знак 3','http://falerist.org/cache/com_zoo/images/Znak%20Moskovskij%20rkheologicheskij%20institut_993478a6ebe1d90ea2b3d7dcc5075b95.jpg',2,0],
-['Знак 4','http://falerist.org/cache/com_zoo/images/Znak%20Magistra%20Rossijskoj%20imperii_eba011e37b3c7288c528607a0094dbd5.jpg',2,1],
-['Знак 5','http://falerist.org/cache/com_zoo/images/Za_otlichnuyu_sluzhbu_v_MVD_tip2_avers_e0dda830accfe1f71bb6b10be70de94c.png',2,2],
-['Знак 6','http://falerist.org/cache/com_zoo/images/Zasluzhennyy_rabotnik_NKVD_tip2_avers_4f609d9b7ae421f760790fb86ed3b06a.png',3,1],
-['Знак 7','http://falerist.org/cache/com_zoo/images/Pamyatnyy_zheton_NKVD_Severnoy_oblasti_RSFSR_v_chest_1-y_godovshchiny_Oktyabrya_tip2_avers_01e2222d9a136a17bcfbd9c52aefc702.png',3,2],
-['Знак 8','http://falerist.org/cache/com_zoo/images/Sluzhebnyy_znak_sotrudnika_Moskovskogo_Ugolovnogo_rozyska_avers_0d08d312a8da373b52d09b2b2815aa3f.png',3,3],
-['Знак 9','http://falerist.org/cache/com_zoo/images/Narukavnyy_znak_sotrudnika_militsii_tip1_avers_6183583b597bdbd944d697566676ae42.png',3,4],
-['Знак 10','http://falerist.org/cache/com_zoo/images/Yedinyy_znak_na_golovnoy_ubor_dlya_sotrudnikov_vnutrennikh_del_tip3_avers_9dd79446a4ded2e22b8e427d082be808.png',3,5]
+['Знак 1','http://falerist.org/cache/com_zoo/images/Morskoy_opolchencheskiy_znak_NikolayI_a17b70659821656e5007fc8a4739376f.jpg',1,0],
+['Знак 2','http://falerist.org/cache/com_zoo/images/Znak%20Moskovskij%20rkheologicheskij%20institut_993478a6ebe1d90ea2b3d7dcc5075b95.jpg',2,0],
+['Знак 3','http://falerist.org/cache/com_zoo/images/Znak%20Magistra%20Rossijskoj%20imperii_eba011e37b3c7288c528607a0094dbd5.jpg',2,1],
+['Знак 4','http://falerist.org/cache/com_zoo/images/Za_otlichnuyu_sluzhbu_v_MVD_tip2_avers_e0dda830accfe1f71bb6b10be70de94c.png',2,2],
+['Знак 5','http://falerist.org/cache/com_zoo/images/Zasluzhennyy_rabotnik_NKVD_tip2_avers_4f609d9b7ae421f760790fb86ed3b06a.png',3,1],
+['Знак 6','http://falerist.org/cache/com_zoo/images/Pamyatnyy_zheton_NKVD_Severnoy_oblasti_RSFSR_v_chest_1-y_godovshchiny_Oktyabrya_tip2_avers_01e2222d9a136a17bcfbd9c52aefc702.png',3,2],
+['Знак 7','http://falerist.org/cache/com_zoo/images/Sluzhebnyy_znak_sotrudnika_Moskovskogo_Ugolovnogo_rozyska_avers_0d08d312a8da373b52d09b2b2815aa3f.png',3,3],
+['Знак 8','http://falerist.org/cache/com_zoo/images/Narukavnyy_znak_sotrudnika_militsii_tip1_avers_6183583b597bdbd944d697566676ae42.png',3,4],
+['Знак 9','http://falerist.org/cache/com_zoo/images/Yedinyy_znak_na_golovnoy_ubor_dlya_sotrudnikov_vnutrennikh_del_tip3_avers_9dd79446a4ded2e22b8e427d082be808.png',3,5],
+['Знак 10','https://upload.wikimedia.org/wikipedia/commons/6/69/Badge_Off-High-School_SU.png',3,6]
 ].map do |title, url, badge_rule, badge_type|
   { title: title, url: url, badge_rule: badge_rule, badge_type: badge_type}
 end

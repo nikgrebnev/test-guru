@@ -20,7 +20,7 @@ class BadgeService
   def valid?(badge)
     func =  badge_method_name(badge.badge_rule)
 #    eval("#{func}(#{badge.badge_type.to_i})")
-    send(func, badge.badge_type)
+    send("#{func}", badge.badge_type)
   end
 
   def badge_method_name(rule)
@@ -34,7 +34,7 @@ class BadgeService
 
   def check_first_attempt(skip)
     # Выдать бэйдж после успешного прохождения теста с первой попытки
-    @user.tests.where(id: @test).count == 1
+    @user.tests.where(id: @test.id).count == 1
   end
 
   def check_all_tests_by_level(level)
