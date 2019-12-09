@@ -29,6 +29,10 @@ ru:
     timer: 'Время, сек'
     time_left: 'Осталось времени, сек'
     timeout: 'Время на сдачу теста истекло!'
+    my_badges: 'Мои награды'
+    all_badges: 'Все возможные награды'
+    badges: 'Награды'
+    received_badge: 'Вы получили награду %{title}!'
 
 
   helpers:
