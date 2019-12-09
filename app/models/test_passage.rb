@@ -8,12 +8,6 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
 #  before_validation :before_validation_set_next_question, on: :update
 
-  def save_result
-    @result = calc_result
-    self.result = @result
-    save!
-  end
-
   def success?
     success_percent >= TEST_SUCCESS && completed?
   end
@@ -63,7 +57,7 @@ class TestPassage < ApplicationRecord
   end
 
 #  def before_validation_set_next_question
-#    self.current_question = next_question
+#    self.current_question = next_question # unless completed?
 #  end
 
   def correct_answer?(answer_ids)
